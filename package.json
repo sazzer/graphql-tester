@@ -4,8 +4,13 @@
   "description": "Module for writing fluent tests against a GraphQL API",
   "main": "lib/main/index.js",
   "scripts": {
+    "clean": "rm -rf lib",
     "compile": "babel src/main -d lib/main",
-    "test": "npm run compile && echo \"Error: no test specified\" && exit 1"
+    "test-compile": "babel src/test -d lib/test",
+    "pretest-compile": "npm run compile",
+    "preunittest": "npm run test-compile",
+    "unittest": "mocha lib/test",
+    "test": "npm run unittest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,7 @@
   "homepage": "https://github.com/sazzer/graphql-tester#readme",
   "devDependencies": {
     "babel-cli": "^6.4.5",
-    "babel-preset-es2015-node5": "^1.1.2"
+    "babel-preset-es2015-node5": "^1.1.2",
+    "mocha": "^2.4.5"
   }
 }
