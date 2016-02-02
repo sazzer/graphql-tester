@@ -5,12 +5,17 @@
   "main": "lib/main/index.js",
   "scripts": {
     "clean": "rm -rf lib",
+
     "compile": "babel src/main -d lib/main",
+
     "test-compile": "babel src/test -d lib/test",
     "pretest-compile": "npm run compile",
     "preunittest": "npm run test-compile",
     "unittest": "mocha lib/test",
-    "test": "npm run unittest"
+
+    "lint": "eslint src",
+
+    "test": "npm run lint && npm run unittest"
   },
   "repository": {
     "type": "git",
@@ -28,7 +33,9 @@
   "homepage": "https://github.com/sazzer/graphql-tester#readme",
   "devDependencies": {
     "babel-cli": "^6.4.5",
+    "babel-eslint": "^4.1.8",
     "babel-preset-es2015-node5": "^1.1.2",
+    "eslint": "^1.10.3",
     "mocha": "^2.4.5"
   }
 }

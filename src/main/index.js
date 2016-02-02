@@ -1,5 +1,5 @@
 export function tester({
-    url, 
+    url,
     method = 'POST',
     contentType = 'application/graphql'
 }) {
