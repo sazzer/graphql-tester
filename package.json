@@ -1,0 +1,23 @@
+{
+  "name": "graphql-tester",
+  "version": "0.0.1",
+  "description": "Module for writing fluent tests against a GraphQL API",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sazzer/graphql-tester.git"
+  },
+  "keywords": [
+    "graphql",
+    "test"
+  ],
+  "author": "Graham Cox <graham@grahamcox.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sazzer/graphql-tester/issues"
+  },
+  "homepage": "https://github.com/sazzer/graphql-tester#readme"
+}
