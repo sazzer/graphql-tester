@@ -11,7 +11,8 @@
     "preunittest": "npm run test-compile",
     "unittest": "mocha -G --recursive --require lib/test/setup lib/test",
     "lint": "eslint src",
-    "test": "npm run lint && npm run unittest"
+    "test": "npm run lint && npm run unittest",
+    "prepublish": "npm run clean && npm run test"
   },
   "repository": {
     "type": "git",
