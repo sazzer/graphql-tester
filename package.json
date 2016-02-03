@@ -39,5 +39,8 @@
   },
   "dependencies": {
     "request": "^2.69.0"
+  },
+  "engines": {
+    "node": ">=5.0.0"
   }
 }
