@@ -5,7 +5,7 @@ Module for writing fluent tests against a GraphQL API.
 
 Example
 -------
-This example works against the live SWAPI Implementation available on http://graphql-swapi.parseapp.com.
+This example works against the live SWAPI Implementation available on http://graphql-swapi.parseapp.com. There is a real test, using [Mocha](http://mochajs.org) and [Chai](http://chaijs.com) for this under test/swapi/simple-swapi.tests.js
 
 ```javascript
 import {tester} from 'graphql-tester';
@@ -30,7 +30,7 @@ test('{person(personID: 1234) { name } }')
     });
 
 // This tests a malformed query
-test('{person(personID: 'abcd') { name } }')
+test('{person(personId: 1) { name } }')
     .then((response) => {
         assert(response.success == false);
         assert(response.status == 400);
@@ -49,7 +49,10 @@ The "tester" function is used to create a function that can be used to test a sp
 * contentType - The Content Type Header to set for the requests. This is optional, and will default to "application/graphql"
 
 This function will return a function that can be used to make requests to the API. This returned function takes a single parameter as being the GraphQL Query to execute, and will return a Promise for the response from the server. This Promise will be resolved with an Object containing:
+* success - True if the query was a success. False if not. Note that in this case Success means there was no "errors" element returned.
 * status - The HTTP Status Code of the response received.
+* headers - The HTTP Headers of the response received.
+* raw - The raw response that was received.
 * data - The "data" element in the response from the server, if present.
 * errors - The "errors" element in the response from the server, if present.
 
