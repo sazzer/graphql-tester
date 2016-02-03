@@ -6,7 +6,7 @@ Module for writing fluent tests against a GraphQL API.
 
 Example
 -------
-This example works against the live SWAPI Implementation available on http://graphql-swapi.parseapp.com. There is a real test, using [Mocha](http://mochajs.org) and [Chai](http://chaijs.com) for this under test/swapi/simple-swapi.tests.js
+This example works against the live SWAPI Implementation available on http://graphql-swapi.parseapp.com. There is a real test, using [Mocha](http://mochajs.org) and [Chai](http://chaijs.com) for this under src/test/swapi/simple-swapi.tests.js
 
 ```javascript
 import {tester} from 'graphql-tester';
