@@ -3,5 +3,17 @@ export function tester({
     method = 'POST',
     contentType = 'application/graphql'
 }) {
-    throw new Error('Not Implemented Yet');
+    return (query) => {
+        return new Promise((resolve, reject) => {
+            resolve({
+                success: true,
+                status: 200,
+                data: {
+                    person: {
+                        name: 'Luke Skywalker'
+                    }
+                }
+            });
+        });
+    };
 }

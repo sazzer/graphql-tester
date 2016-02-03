@@ -11,7 +11,7 @@
     "test-compile": "babel src/test -d lib/test",
     "pretest-compile": "npm run compile",
     "preunittest": "npm run test-compile",
-    "unittest": "mocha lib/test",
+    "unittest": "mocha -G --recursive --require lib/test/setup lib/test",
 
     "lint": "eslint src",
 
@@ -35,6 +35,8 @@
     "babel-cli": "^6.4.5",
     "babel-eslint": "^4.1.8",
     "babel-preset-es2015-node5": "^1.1.2",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.2.0",
     "eslint": "^1.10.3",
     "mocha": "^2.4.5"
   }
