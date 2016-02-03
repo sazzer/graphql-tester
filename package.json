@@ -1,6 +1,6 @@
 {
   "name": "graphql-tester",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Module for writing fluent tests against a GraphQL API",
   "main": "lib/main/index.js",
   "scripts": {
