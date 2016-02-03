@@ -1,5 +1,6 @@
 GraphQL Tester
 ==============
+[![Build Status](https://travis-ci.org/sazzer/graphql-tester.svg?branch=master)](https://travis-ci.org/sazzer/graphql-tester)
 
 Module for writing fluent tests against a GraphQL API.
 
