@@ -20,7 +20,7 @@ test('{person(personID: 1) { name } }')
     .then((response) => {
         assert(response.success == true);
         assert(response.status == 200);
-        assert(response.data.person.name == 'Like Skywalker');
+        assert(response.data.person.name == 'Luke Skywalker');
     });
 
 // This tests a request for the name of non-existant person 1234
