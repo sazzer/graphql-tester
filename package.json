@@ -41,6 +41,7 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
+    "freeport": "^1.0.5",
     "request": "^2.69.0"
   },
   "engines": {
