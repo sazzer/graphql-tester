@@ -35,6 +35,9 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
     "eslint": "^1.10.3",
+    "graphql": "^0.4.16",
+    "hapi": "^13.0.0",
+    "hapi-graphql": "^0.4.0",
     "mocha": "^2.4.5"
   },
   "dependencies": {
