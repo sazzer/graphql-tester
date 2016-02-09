@@ -14,7 +14,9 @@ describe('Express Server', () => {
 
                 return new Promise((resolve, reject) => {
                     server.listen(port, () => {
-                        resolve(`http://localhost:${port}`);
+                        resolve({
+                            url: `http://localhost:${port}`
+                        });
                     });
                 });
             }

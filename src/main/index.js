@@ -15,7 +15,10 @@ export function tester({
                         reject(err);
                     } else {
                         resolve(server.creator(port)
-                            .then((baseUrl) => baseUrl + url));
+                            .then((runningServer) => {
+                                console.log(runningServer);
+                                return runningServer.url + url
+                            }));
                     }
                 });
             } else {

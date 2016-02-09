@@ -29,7 +29,11 @@ describe('Hapi Server', () => {
                     }
                 ])
                 .then(() => server.start())
-                .then(() => server.info.uri);
+                .then(() => {
+                    return {
+                        url: server.info.uri
+                    };
+                });
             }
         },
         url: '/graphql'
