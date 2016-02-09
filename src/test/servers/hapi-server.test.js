@@ -22,7 +22,7 @@ describe('Hapi Server', () => {
                               pretty: false
                             },
                             route: {
-                              path: '/graphql',
+                              path: '/hapi/graphql',
                               config: {}
                             }
                         }
@@ -31,12 +31,18 @@ describe('Hapi Server', () => {
                 .then(() => server.start())
                 .then(() => {
                     return {
+                        server: {
+                            shutdown: () => {
+                                console.log(`Shutting down server on port ${port}`);
+                                server.stop();
+                            }
+                        },
                         url: server.info.uri
                     };
                 });
             }
         },
-        url: '/graphql'
+        url: '/hapi/graphql'
     });
     
     describe('Valid Query', () => {

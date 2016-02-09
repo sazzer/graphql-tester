@@ -8,20 +8,25 @@ describe('Express Server', () => {
         server: {
             creator: (port) => {
                 const server = express();
-                server.use('/graphql', GraphQL({
+                server.use('/express/graphql', GraphQL({
                     schema: TestSchema
                 }));
 
                 return new Promise((resolve, reject) => {
-                    server.listen(port, () => {
+                    const app = server.listen(port, () => {
                         resolve({
+                            server: {
+                                shutdown: () => {
+                                    app.close();
+                                }
+                            },
                             url: `http://localhost:${port}`
                         });
                     });
                 });
             }
         },
-        url: '/graphql'
+        url: '/express/graphql'
     });
 
     describe('Valid Query', () => {

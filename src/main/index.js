@@ -16,25 +16,33 @@ export function tester({
                     } else {
                         resolve(server.creator(port)
                             .then((runningServer) => {
-                                console.log(runningServer);
-                                return runningServer.url + url
+                                return {
+                                    server: runningServer.server,
+                                    url: runningServer.url + url
+                                }
                             }));
                     }
                 });
             } else {
-                resolve(url);
+                resolve({
+                    url
+                });
             }
-        }).then((realUrl) => {
-            console.log(`Sending query ${query} to ${realUrl}`);
+        }).then(({url, server}) => {
+            console.log(`Sending query ${query} to ${url}`);
             return new Promise((resolve, reject) => {
                 request({
                     method,
-                    uri: realUrl,
+                    uri: url,
                     headers: {
                         'Content-Type': contentType
                     },
                     body: query
                 }, (error, message, body) => {
+                    if (server && typeof(server.shutdown) === 'function') {
+                        server.shutdown();
+                    }
+                    
                     if (error) {
                         reject(error);
                     } else {
