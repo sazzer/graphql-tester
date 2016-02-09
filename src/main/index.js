@@ -29,7 +29,6 @@ export function tester({
                 });
             }
         }).then(({url, server}) => {
-            console.log(`Sending query ${query} to ${url}`);
             return new Promise((resolve, reject) => {
                 request({
                     method,

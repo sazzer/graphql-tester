@@ -1,31 +1,17 @@
 import express from 'express';
 import GraphQL from 'express-graphql';
+import {create as createExpressWrapper} from '../../main/servers/express';
 import {TestSchema} from './schema';
 import {tester} from '../../main';
 
 describe('Express Server', () => {
-    let ExpressTest = tester({
-        server: {
-            creator: (port) => {
-                const server = express();
-                server.use('/express/graphql', GraphQL({
-                    schema: TestSchema
-                }));
+    const app = express();
+    app.use('/express/graphql', GraphQL({
+        schema: TestSchema
+    }));
 
-                return new Promise((resolve, reject) => {
-                    const app = server.listen(port, () => {
-                        resolve({
-                            server: {
-                                shutdown: () => {
-                                    app.close();
-                                }
-                            },
-                            url: `http://localhost:${port}`
-                        });
-                    });
-                });
-            }
-        },
+    const ExpressTest = tester({
+        server: createExpressWrapper(app),
         url: '/express/graphql'
     });
 

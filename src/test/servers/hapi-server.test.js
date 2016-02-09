@@ -1,47 +1,26 @@
-import Hapi from 'hapi';
 import GraphQL from 'hapi-graphql';
+import {create as createHapiWrapper} from '../../main/servers/hapi';
 import {TestSchema} from './schema';
 import {tester} from '../../main';
 
 describe('Hapi Server', () => {
-    let HapiTest = tester({
-        server: {
-            creator: (port) => {
-                const server = new Hapi.Server();
-                server.connection({
-                    port
-                });
-                
-                return server.register([
-                    {
-                        register: GraphQL,
-                        options: {
-                            query: {
-                              schema: TestSchema,
-                              rootValue: {},
-                              pretty: false
-                            },
-                            route: {
-                              path: '/hapi/graphql',
-                              config: {}
-                            }
-                        }
+    const HapiTest = tester({
+        server: createHapiWrapper([
+            {
+                register: GraphQL,
+                options: {
+                    query: {
+                      schema: TestSchema,
+                      rootValue: {},
+                      pretty: false
+                    },
+                    route: {
+                      path: '/hapi/graphql',
+                      config: {}
                     }
-                ])
-                .then(() => server.start())
-                .then(() => {
-                    return {
-                        server: {
-                            shutdown: () => {
-                                console.log(`Shutting down server on port ${port}`);
-                                server.stop();
-                            }
-                        },
-                        url: server.info.uri
-                    };
-                });
+                }
             }
-        },
+        ]),
         url: '/hapi/graphql'
     });
     
