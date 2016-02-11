@@ -2,7 +2,7 @@ GraphQL Tester
 ==============
 [![Build Status](https://travis-ci.org/sazzer/graphql-tester.svg?branch=master)](https://travis-ci.org/sazzer/graphql-tester)
 
-Module for writing fluent tests against a GraphQL API.
+Test Framework for executing integration tests against GraphQL Services.
 
 Example
 -------
