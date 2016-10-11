@@ -5,7 +5,8 @@ export function tester({
     url,
     server,
     method = 'POST',
-    contentType = 'application/graphql'
+    contentType = 'application/graphql',
+    additionalHeaders = null
 }) {
     return (query) => {
         return new Promise((resolve, reject) => {
@@ -34,7 +35,8 @@ export function tester({
                     method,
                     uri: url,
                     headers: {
-                        'Content-Type': contentType
+                        'Content-Type': contentType,
+                        ...additionalHeaders
                     },
                     body: query
                 }, (error, message, body) => {
