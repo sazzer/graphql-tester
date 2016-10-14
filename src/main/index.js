@@ -6,7 +6,7 @@ export function tester({
     server,
     method = 'POST',
     contentType = 'application/graphql',
-    additionalHeaders = null
+    authentication = null
 }) {
     return (query) => {
         return new Promise((resolve, reject) => {
@@ -31,13 +31,15 @@ export function tester({
             }
         }).then(({url, server}) => {
             return new Promise((resolve, reject) => {
+                let headers = {
+                    'Content-Type': contentType,
+                };
+                if (authentication !== null) headers['authentication'] = authentication;
+
                 request({
                     method,
                     uri: url,
-                    headers: {
-                        'Content-Type': contentType,
-                        ...additionalHeaders
-                    },
+                    headers: headers,
                     body: query
                 }, (error, message, body) => {
                     if (server && typeof(server.shutdown) === 'function') {
