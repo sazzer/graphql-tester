@@ -6,7 +6,7 @@ export function tester({
     server,
     method = 'POST',
     contentType = 'application/graphql',
-    authentication = null
+    authorization = null
 }) {
     return (query) => {
         return new Promise((resolve, reject) => {
@@ -34,7 +34,7 @@ export function tester({
                 let headers = {
                     'Content-Type': contentType,
                 };
-                if (authentication !== null) headers['authentication'] = authentication;
+                if (authorization !== null) headers['Authorization'] = authorization;
 
                 request({
                     method,
