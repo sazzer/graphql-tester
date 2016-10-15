@@ -1,6 +1,6 @@
 {
   "name": "graphql-tester",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Test Framework for executing integration tests against GraphQL Services",
   "main": "lib/main/index.js",
   "scripts": {
