@@ -30,17 +30,17 @@
   "homepage": "https://github.com/sazzer/graphql-tester#readme",
   "devDependencies": {
     "babel-cli": "^6.4.5",
-    "babel-eslint": "^4.1.8",
+    "babel-eslint": "^7.0.0",
     "babel-preset-es2015": "^6.3.13",
     "chai": "^3.5.0",
-    "chai-as-promised": "^5.2.0",
-    "eslint": "^1.10.3",
+    "chai-as-promised": "^6.0.0",
+    "eslint": "^3.8.0",
     "express": "^4.13.4",
-    "express-graphql": "^0.4.9",
-    "graphql": "^0.4.16",
-    "hapi": "^13.0.0",
-    "hapi-graphql": "^0.4.0",
-    "mocha": "^2.4.5"
+    "express-graphql": "^0.5.4",
+    "graphql": "^0.7.2",
+    "hapi": "^15.1.1",
+    "hapi-graphql": "^1.0.1",
+    "mocha": "^3.1.2"
   },
   "dependencies": {
     "freeport": "^1.0.5",
