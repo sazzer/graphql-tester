@@ -8,7 +8,7 @@ export function tester({
     contentType = 'application/graphql',
     authorization = null
 }) {
-    return (query) => {
+    return (query, requestOptions) => {
         return new Promise((resolve, reject) => {
             if (server) {
                 freeport((err, port) => {
@@ -35,13 +35,9 @@ export function tester({
                     'Content-Type': contentType,
                 };
                 if (authorization !== null) headers['Authorization'] = authorization;
-
-                request({
-                    method,
-                    uri: url,
-                    headers: headers,
-                    body: query
-                }, (error, message, body) => {
+                let options = { method, uri: url, headers, body: query };
+                options = Object.assign(options, requestOptions);
+                request(options, (error, message, body) => {
                     if (server && typeof(server.shutdown) === 'function') {
                         server.shutdown();
                     }
