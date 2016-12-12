@@ -50,7 +50,12 @@ The "tester" function is used to create a function that can be used to test a sp
 * method - The HTTP Method to use for the requests. This is optional, and will default to POST
 * contentType - The Content Type Header to set for the requests. This is optional, and will default to "application/graphql"
 
-This function will return a function that can be used to make requests to the API. This returned function takes a single parameter as being the GraphQL Query to execute, and will return a Promise for the response from the server. This Promise will be resolved with an Object containing:
+This function will return a function that can be used to make requests to the API. This returned function takes:
+
+* a GraphQL Query to execute
+* an optional [request options Object](https://github.com/request/request#requestoptions-callback) that will add to and override the default options
+
+It will return a Promise for the response from the server. This Promise will be resolved with an Object containing:
 * success - True if the query was a success. False if not. Note that in this case Success means there was no "errors" element returned.
 * status - The HTTP Status Code of the response received.
 * headers - The HTTP Headers of the response received.
