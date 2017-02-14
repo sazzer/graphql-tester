@@ -6,7 +6,7 @@ Test Framework for executing integration tests against GraphQL Services.
 
 Example
 -------
-This example works against the live SWAPI Implementation available on http://graphql-swapi.parseapp.com. There is a real test, using [Mocha](http://mochajs.org) and [Chai](http://chaijs.com) for this under src/test/swapi/simple-swapi.tests.js
+This example works against the live SWAPI Implementation available on http://graphql-swapi.parseapp.com. There is a real test, using [Mocha](http://mochajs.org) and [Chai](http://chaijs.com) for this under src/test/swapi/simple-swapi.tests.js.disable
 
 ```javascript
 import {tester} from 'graphql-tester';
@@ -76,7 +76,7 @@ An example of testing against an Express Server can be seen in src/test/servers/
 In order to configure the tester to work against an Express server, you simply need to use the "create" function exported from the "graphql-tester/servers/express" module. This function is called with the configured but not-yet-running Express server, and returns the full configuration to pass in to the "server" property of the "tester" function.
 
 ##### HapiJS
-An example of testing against a HapiJS Server can be seen in src/test/servers/hapi-server.test.js.
+An example of testing against a HapiJS Server can be seen in src/test/servers/hapi-server.test.js.disable.
 
 In oder to configure the tester to work against a HapiJS Server, you simply need to use the "create" function exported from the "graphql-tester/servers/hapi" module. This function is called with the plugin configuration to configure HapiJS with - this can be anything that you can legally pass to Hapi.Server.Register - and will return the full configuration to pass in to the "server" property of the "tester" function.
 
