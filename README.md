@@ -71,7 +71,7 @@ Note that because a Promise is returned you get some benefits here. You can use 
 When the "tester" function is used to create the GraphQL Tester to use, it is possible to pass in an Application Server configuration. This configuration will be used to start up an Application Server before each test is run, execute the query against this server and then shut the server down. Helper functions are provided to configure an Application Server for use with Express 4.x and HapiJS. Any other server can be used though, as long as you provide the configuration yourself.
 
 ##### Express 4.x
-An example of testing against an Express Server can be seen in src/test/servers/express-server.test.js.
+An example of testing against an Express Server can be seen in src/test/servers/express-server.test.js.disable.
 
 In order to configure the tester to work against an Express server, you simply need to use the "create" function exported from the "graphql-tester/servers/express" module. This function is called with the configured but not-yet-running Express server, and returns the full configuration to pass in to the "server" property of the "tester" function.
 
