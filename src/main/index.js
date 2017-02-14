@@ -5,8 +5,9 @@ export function tester({
     url,
     server,
     method = 'POST',
-    contentType = 'application/graphql',
-    authorization = null
+    contentType = 'application/json',
+    authorization = null,
+    cookie = null
 }) {
     return (query, requestOptions) => {
         return new Promise((resolve, reject) => {
@@ -35,6 +36,7 @@ export function tester({
                     'Content-Type': contentType,
                 };
                 if (authorization !== null) headers['Authorization'] = authorization;
+                if (cookie !== null) headers['Cookie'] = cookie;
                 let options = { method, uri: url, headers, body: query };
                 options = Object.assign(options, requestOptions);
                 request(options, (error, message, body) => {

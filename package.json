@@ -1,7 +1,7 @@
 {
-  "name": "graphql-tester",
-  "version": "0.0.5",
-  "description": "Test Framework for executing integration tests against GraphQL Services",
+  "name": "@funfunfunco/graphql-tester",
+  "version": "0.0.2",
+  "description": "Test Framework for executing integration tests against GraphQL Services - Fun 2.0 version :)",
   "main": "lib/main/index.js",
   "scripts": {
     "clean": "rm -rf lib",
@@ -16,18 +16,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sazzer/graphql-tester.git"
+    "url": "git+https://github.com/funcompany/graphql-tester.git"
   },
   "keywords": [
     "graphql",
     "test"
   ],
-  "author": "Graham Cox <graham@grahamcox.co.uk>",
+  "author": "Graham Cox <graham@grahamcox.co.uk> - changes by Fun2.0",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sazzer/graphql-tester/issues"
   },
-  "homepage": "https://github.com/sazzer/graphql-tester#readme",
+  "homepage": "https://github.com/funcompany/graphql-tester#readme",
   "devDependencies": {
     "babel-cli": "^6.4.5",
     "babel-eslint": "^7.0.0",
