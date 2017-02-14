@@ -1,6 +1,6 @@
 {
   "name": "@funfunfunco/graphql-tester",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Test Framework for executing integration tests against GraphQL Services - Fun 2.0 version :)",
   "main": "lib/main/index.js",
   "scripts": {
