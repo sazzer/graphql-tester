@@ -5,7 +5,7 @@ export function tester({
     url,
     server,
     method = 'POST',
-    contentType = 'application/graphql',
+    contentType = 'application/json',
     authorization = null,
     cookie = null
 }) {
