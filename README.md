@@ -80,7 +80,7 @@ An example of testing against a HapiJS Server can be seen in src/test/servers/ha
 
 In oder to configure the tester to work against a HapiJS Server, you simply need to use the "create" function exported from the "graphql-tester/servers/hapi" module. This function is called with the plugin configuration to configure HapiJS with - this can be anything that you can legally pass to Hapi.Server.Register - and will return the full configuration to pass in to the "server" property of the "tester" function.
 
-##### Arbitrary Application servers
+##### Arbitrary Application servers
 It is possible to use any arbitrary application server by providing the configuration yourself. This configuration currently takes the form of a Javascript Object that has a single key of "creator". This key is a function that is called with the port number to listen on - this will be dynamically generated every test - and should return a Promise for the server configuration. This server configuration should be a Javascript object that has keys of:
 * url - The base URL of the server. Note that this is *not* the URL to the GraphQL endpoint - that should be passed in to the "url" property of the "tester" function as usual, but should be relative to this Base URL.
 * server - This is a Javascript object with a single key - "shutdown" - which is a function to shut the running server down at the end of the test. This is optional, but if not provided then it will not be possible to shut the servers down and eventually the test process is likely to crash from a lack of resources.
